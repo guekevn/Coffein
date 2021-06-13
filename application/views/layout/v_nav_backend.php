@@ -1,7 +1,7 @@
  <!-- Main Sidebar Container -->
  <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="<?= base_url('admin')?>" class="brand-link">
       <img src="<?= base_url() ?>template/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Halaman Admin</span>
     </a>
@@ -14,7 +14,7 @@
           <img src="<?= base_url() ?>template/dist/img/user1-128x128.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Kevin Arsy</a>
+          <a href="#" class="d-block"><?= $this->session->userdata('nama_user') ?></a>
         </div>
       </div>
 
@@ -37,23 +37,38 @@
                with font-awesome or any other icon font library -->
 
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="<?= base_url('admin')?>" class="nav-link <?php if($this->uri->segment(1)=='admin'){
+                                                                      echo "active";
+                                                                    }?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>Dashboard</p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="<?= base_url('kategori')?>" class="nav-link <?php if($this->uri->segment(1)=='kategori'){
+                                                                      echo "active";
+                                                                    }?>">
               <i class="nav-icon fas fa-list"></i>
               <p>Kategori</p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-list"></i>
+            <a href="<?= base_url('produk')?>" class="nav-link <?php if($this->uri->segment(1)=='produk'){
+                                                                      echo "active";
+                                                                    }?>">
+              <i class="nav-icon fas fa-cubes"></i>
               <p>Produk</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="<?= base_url('gambarproduk')?>" class="nav-link <?php if($this->uri->segment(1)=='gambarproduk'){
+                                                                      echo "active";
+                                                                    }?>">
+              <i class="nav-icon fas fa-image"></i>
+              <p>Gambar Produk</p>
             </a>
           </li>
 
@@ -84,12 +99,26 @@
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
-              <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-              </p>
+              <p>Simple Link</p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="<?= base_url('user')?>" class="nav-link <?php if($this->uri->segment(1)=='user'){
+                                                                      echo "active";
+                                                                    }?>">
+              <i class="nav-icon fas fa-users"></i>
+              <p>Users</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="<?= base_url('auth/logout_user') ?>" class="nav-link">
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p>Logout</p>
+            </a>
+          </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -104,12 +133,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Starter Page</h1>
+            <h1 class="m-0"><?= $title ?></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
+              <li class="breadcrumb-item active"><?= $title ?></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
