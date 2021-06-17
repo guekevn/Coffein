@@ -15,7 +15,7 @@ class M_home extends CI_Model{
     public function get_all_data_kategori(){
         $this->db->select('*');
         $this->db->from('tbl_kategori');
-        $this->db->where('id_kategori', 'desc');
+        $this->db->order_by('id_kategori', 'desc');
         return $this->db->get()->result();
     }
 

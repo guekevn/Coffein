@@ -36,10 +36,16 @@
 <div class="card card-solid">
     <div class="card-body pb-0">
         <div class="row">
-
-
       <?php foreach ($produk as $key => $value) { ?>
-        <div class="col-sm-4 d-flex align-items-stretch">
+        <div class="col-sm-4">
+          <?php 
+            echo form_open('belanja/add');
+            echo form_hidden('id', $value->id_produk);
+            echo form_hidden('qty', 1);
+            echo form_hidden('price', $value->harga);
+            echo form_hidden('name', $value->nama_produk);
+            echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
+          ?>
               <div class="card bg-light d-flex flex-fill">
                 <div class="card-header text-muted border-bottom-0">
                   <h2 class="lead"><b><?= $value->nama_produk ?></b></h2>
@@ -49,7 +55,7 @@
                   <div class="row">
                     
                     <div class="col-12 text-center">
-                      <img src="<?= base_url('assets/gambar/'.$value->gambar) ?>" alt="" class="img-fluid" width="500px">
+                      <img src="<?= base_url('assets/gambar/'.$value->gambar) ?>" width="300px" height="250px">
                     </div>
                   </div>
                 </div>
@@ -65,17 +71,38 @@
                         <a href="<?= base_url('home/detail_produk/'.$value->id_produk) ?>" class="btn btn-sm btn-success">
                           <i class="fas fa-eye"></i>
                         </a>
-                        <a href="#" class="btn btn-sm btn-primary">
+                        <button type="submit" class="btn btn-sm btn-primary swalDefaultSuccess">
                           <i class="fas fa-cart-plus"> Tambah</i>
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <?php echo form_close(); ?>
             </div>
       <?php } ?>
 
         </div>
     </div>
 </div>
+
+
+<script src="<?= base_url() ?>template/plugins/sweetalert2/sweetalert2.min.js"></script>
+<script>
+  $(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+
+    $('.swalDefaultSuccess').click(function() {
+      Toast.fire({
+        icon: 'success',
+        title: ' Produk Berhasil ditambahkan ke Keranjang'
+      })
+    });
+  });
+</script>

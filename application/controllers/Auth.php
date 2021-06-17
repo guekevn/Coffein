@@ -11,7 +11,7 @@ class Auth extends CI_Controller{
             'required' => '%s Harus Diisi !!!'
         ));
 
-        if($this->form_validation->run() == TRUE){
+        if ($this->form_validation->run() == TRUE){
             $username = $this->input->post('username');
             $password = $this->input->post('password');
             $this->user_login->login($username, $password);

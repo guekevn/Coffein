@@ -32,13 +32,27 @@
 
               <hr>
 
+              <?php 
+                echo form_open('belanja/add');
+                echo form_hidden('id', $produk->id_produk);
+                echo form_hidden('price', $produk->harga);
+                echo form_hidden('name', $produk->nama_produk);
+                echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
+              ?>
               <div class="mt-4">
-                <div class="btn btn-primary btn-lg btn-flat">
-                  <i class="fas fa-cart-plus fa-lg mr-2"></i>
-                  Add to Cart
+                <div class="row">
+                  <div class="col-sm-2">
+                    <input type="number" name="qty" class="form-control" value="1" min="1">
+                  </div>
+                    <div class="col-sm-8">
+                      <button type="submit" class="btn btn-primary btn-flat swalDefaultSuccess">
+                        <i class="fas fa-cart-plus fa-lg mr-2"></i>
+                        Add to Cart
+                      </button>
+                    </div>
                 </div>
-
               </div>
+              <?php echo form_open(); ?>
 
               <div class="mt-4 product-share">
                 <a href="#" class="text-gray">
@@ -62,6 +76,7 @@
       </div>
       <!-- /.card -->
 
+<script src="<?= base_url() ?>template/plugins/sweetalert2/sweetalert2.min.js"></script>
 <script>
   $(document).ready(function() {
     $('.product-image-thumb').on('click', function () {
@@ -71,4 +86,21 @@
       $(this).addClass('active')
     })
   })
+</script>
+<script>
+  $(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+
+    $('.swalDefaultSuccess').click(function() {
+      Toast.fire({
+        icon: 'success',
+        title: ' Produk Berhasil ditambahkan ke Keranjang'
+      })
+    });
+  });
 </script>

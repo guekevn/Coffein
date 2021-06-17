@@ -12,7 +12,7 @@ class User_login{
 
     public function login($username, $password){
         $cek = $this->ci->m_auth->login_user($username, $password);
-        if($cek){
+        if ($cek){
             $nama_user = $cek->nama_user;
             $username = $cek->username;
             $level_user = $cek->level_user;
@@ -29,7 +29,7 @@ class User_login{
     }
 
     public function proteksi_halaman(){
-        if($this->ci->session->userdata('username') == ''){
+        if ($this->ci->session->userdata('username') == ''){
             $this->ci->session->set_flashdata('error', 'Anda Belum Masuk !!!');
             redirect('auth/login_user');
         }
