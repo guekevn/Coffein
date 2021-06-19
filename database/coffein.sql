@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Jun 2021 pada 07.42
+-- Waktu pembuatan: 19 Jun 2021 pada 14.07
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.7
 
@@ -64,8 +64,7 @@ INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`) VALUES
 (1, 'Kopi'),
 (2, 'Alat'),
 (4, 'Matcha'),
-(5, 'Coklat'),
-(6, 'Boba');
+(5, 'Coklat');
 
 -- --------------------------------------------------------
 
@@ -112,8 +111,8 @@ INSERT INTO `tbl_produk` (`id_produk`, `nama_produk`, `id_kategori`, `harga`, `d
 (2, 'Americano', 1, 15000, 'Americano adalah minuman kopi espresso dengan tambahan air panas. Namanya diambil dari cara orang Amerika meminum espresso. Konon, penyebutan americano adalah sebagai lelucon dan ejekan terhadap orang-orang Amerika yang suka espresso-nya dibuat lebih encer.', 'americano.jpg'),
 (7, 'Cappucino', 5, 30000, 'Kopi Cappuccino adalah minuman khas Italia yang terdiri dari 1/3 espresso, 1/3 susu steamed, dan 1/3 buih susu. Pada dasarnya, minuman ini adalah campuran dari espresso dan susu seperti minuman-minuman berbasis espresso lainnya. Sepintas, sajian cappuccino hampir tampak serupa dengan minuman latte.', 'cappuccino.jpg'),
 (8, 'Cortado', 1, 10000, 'Cortado sendiri menurut Matt Sheridan, Barista dari Albury Coffee Mama, adalah minuman yang komposisinya berada di antara piccolo latte dan caffe latte. Dengan komposisi single shot dan susu sekitar sepertiga gelas.', 'cortado.jpg'),
-(9, 'Espresso', 4, 21000, 'Kopi espresso adalah kopi yang diseduh dengan menyemburkan air panas bertekanan tinggi ke bubuk kopi. Namanya berasal dari bahasa Italia yang berarti express atau cepat. Disajikan hanya secangkir kecil kira-kira 30-45 ml dengan ciri khas crema pada permukaannya.', 'espresso.jpg'),
-(10, 'Latte', 4, 9000, 'Sama dengan cappucino, latte pada dasarnya ialah kopi susu. Latte diberi foam dari susu yang sudah di-steam. Kadar susunya paling banyak, barista menyebut komposisinya dengan very milky coffee. Tentunya kadar lemak di latte paling banyak dibandingkan kopi macchiato, piccolo, espresso dan cappucino', 'latte.jpg');
+(9, 'Espresso', 1, 21000, 'Kopi espresso adalah kopi yang diseduh dengan menyemburkan air panas bertekanan tinggi ke bubuk kopi. Namanya berasal dari bahasa Italia yang berarti express atau cepat. Disajikan hanya secangkir kecil kira-kira 30-45 ml dengan ciri khas crema pada permukaannya.', 'espresso.jpg'),
+(10, 'Latte', 1, 9000, 'Sama dengan cappucino, latte pada dasarnya ialah kopi susu. Latte diberi foam dari susu yang sudah di-steam. Kadar susunya paling banyak, barista menyebut komposisinya dengan very milky coffee. Tentunya kadar lemak di latte paling banyak dibandingkan kopi macchiato, piccolo, espresso dan cappucino', 'latte.jpg');
 
 -- --------------------------------------------------------
 

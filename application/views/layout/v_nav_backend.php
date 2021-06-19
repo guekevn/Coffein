@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="<?= base_url('admin')?>" class="brand-link">
       <img src="<?= base_url() ?>template/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Halaman Admin</span>
+      <span class="brand-text font-weight-light">Coffein | Admin</span>
     </a>
 
     <!-- Sidebar -->
@@ -69,37 +69,6 @@
                                                                     }?>">
               <i class="nav-icon fas fa-image"></i>
               <p>Gambar Produk</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fas fa-th"></i>
-              <p>
-                Starter Pages
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>Simple Link</p>
             </a>
           </li>
 
